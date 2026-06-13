@@ -1,0 +1,30 @@
+# Minggu 1
+AMAR MUCHLISINA
+Kontribusi:
+1.Membuat repository GitHub kelompok.
+2.Menyusun struktur folder project.
+3.Membuat file .env.
+4.Membuat dan mengonfigurasi docker-compose.yml.
+5.Melakukan deployment WordPress dan MySQL menggunakan Docker Compose.
+6.Melakukan troubleshooting Docker dan konfigurasi DNS saat proses pull image.
+7.Memastikan seluruh container berjalan dengan baik
+
+Adnan adhi pramana
+Kontribusi:
+1.Mendesain arsitektur container WordPress dan MySQL.
+2.Membuat serta mengonfigurasi Docker Network:
+  frontend-net
+  backend-net
+3.Melakukan pengujian komunikasi antar container.
+4.Mengonfigurasi Docker Volume:
+  db_data
+  wordpress_data
+5.Melakukan verifikasi persistence data setelah container direstart.
+6.Membuat dokumentasi hasil pengujian network dan volume
+
+Moh.Rizky Alviansyah
+Kontribusi:
+Melakukan pengujian instalasi WordPress
+Melakukan konfigurasi awal website WordPress
+Mengumpulkan screenshot bukti deployment
+Membuat dokumentasi progress Minggu 1
