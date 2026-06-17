@@ -118,7 +118,9 @@ Menyimpan data WordPress secara persisten.
 - Menambahkan Redis Insight Monitoring
 - Menambahkan MinIO Object Storage
 - Menghubungkan WordPress dengan Object Storage
-
+-  Menyelesaikan seluruh modul instruksional, kuis,
+  dan verifikasi kepesertaan kelas Cloud Computing
+  di platform bisa.ai.
 ---
 
 ## Komponen Tambahan
@@ -241,5 +243,3 @@ MinIO Storage
 | frontend-net | Akses User ke WordPress |
 | backend-net | Komunikasi Internal Service |
 Layer, Cache Layer, Monitoring Layer, dan Object Storage Layer.
-
-Arsitektur ini lebih aman, mudah dikelola, dan memiliki performa yang lebih baik dibandingkan deployment monolitik (all-in-one server).
