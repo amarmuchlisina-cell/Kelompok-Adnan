@@ -28,3 +28,25 @@ Melakukan pengujian instalasi WordPress
 Melakukan konfigurasi awal website WordPress
 Mengumpulkan screenshot bukti deployment
 Membuat dokumentasi progress Minggu 1
+
+
+##### MINGGU 2
+AMARMUCHLISINA
+KONTRIBUSI:
+- Konfigurasi WordPress Container
+- Konfigurasi MySQL Container
+- Konfigurasi Redis Cache
+- Pengujian Integrasi WordPress
+
+ADNAN ADHI PRAMANA
+KONTRIBUSI:
+- Konfigurasi Docker Network
+- Konfigurasi Docker Volume
+- Konfigurasi MinIO Storage
+- Pembuatan Bucket Object Storage
+
+MOH.RIZKY ALVIANSYAH
+KONTRIBUSI:
+- Konfigurasi Redis Insight
+- Integrasi WordPress dengan MinIO
+- Dokumentasi dan Pengujian Sistem
