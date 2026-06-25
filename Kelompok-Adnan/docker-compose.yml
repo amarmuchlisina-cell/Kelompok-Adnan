@@ -3,34 +3,29 @@ services:
   mysql:
     image: mysql:8.0
     container_name: mysql-db
-
     restart: always
-
     env_file:
       - .env
-
     environment:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-
     command: --default-authentication-plugin=mysql_native_password
-
     volumes:
       - db_data:/var/lib/mysql
-
     networks:
       - backend-net
 
   wordpress:
     image: wordpress:latest
     container_name: wordpress-app
-
     restart: always
 
     depends_on:
       - mysql
+      - redis
+      - minio
 
     ports:
       - "8080:80"
@@ -44,6 +39,10 @@ services:
       WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
       WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
 
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_REDIS_HOST', 'redis-cache');
+        define('WP_REDIS_PORT', 6379);
+
     volumes:
       - wordpress_data:/var/www/html
 
@@ -51,9 +50,50 @@ services:
       - frontend-net
       - backend-net
 
+  redis:
+    image: redis:7-alpine
+    container_name: redis-cache
+    restart: always
+    networks:
+      - backend-net
+
+  redis-insight:
+    image: redis/redisinsight:latest
+    container_name: redis-insight
+    restart: always
+    ports:
+      - "5540:5540"
+    networks:
+      - backend-net
+
+  minio:
+    image: minio/minio:latest
+    container_name: minio-storage
+    restart: always
+
+    env_file:
+      - .env
+
+    command: server /data --console-address ":9001"
+
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+
+    volumes:
+      - minio_data:/data
+
+    networks:
+      - backend-net
+
 volumes:
   db_data:
   wordpress_data:
+  minio_data:
 
 networks:
   frontend-net:
