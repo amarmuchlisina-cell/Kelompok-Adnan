@@ -243,3 +243,64 @@ MinIO Storage
 | frontend-net | Akses User ke WordPress |
 | backend-net | Komunikasi Internal Service |
 Layer, Cache Layer, Monitoring Layer, dan Object Storage Layer.
+
+
+## 🔐 MINGGU 3: SECURITY HARDENING & REPOSITORY FINALIZATION
+
+### `[ PHASE 03 / ACT 03: SECURE & DELIVER ]`
+
+Pada fase ketiga, kelompok menerapkan **Best Practices Keamanan** dengan memisahkan seluruh kredensial sensitif ke dalam file `.env`. Langkah ini bertujuan untuk mencegah kebocoran data saat repository dipublikasikan ke GitHub serta memastikan konfigurasi sistem lebih aman dan mudah dikelola.
+
+---
+
+## 🛠️ IMPLEMENTASI KEAMANAN
+
+```text
+┌──────────────────────────┐
+│          .env            │
+│ MYSQL_PASSWORD           │
+│ MYSQL_ROOT_PASSWORD      │
+│ WORDPRESS_DB_PASSWORD    │
+└───────────┬──────────────┘
+            │
+            ▼
+┌──────────────────────────┐
+│   docker-compose.yml     │
+│ ${MYSQL_PASSWORD}        │
+│ ${MYSQL_ROOT_PASSWORD}   │
+│ ${WORDPRESS_DB_PASSWORD} │
+└──────────────────────────┘
+
+✅ Credential terpisah dari source code
+✅ Aman untuk dipublikasikan ke GitHub
+```
+
+---
+
+## ✅ TARGET CAPAIAN MINGGU 3
+
+```text
+[x] [310] ENVIRONMENT_HARDENING
+         Memindahkan seluruh credential ke file .env.
+
+[x] [311] ZERO_HARDCODE_VALIDATION
+         Menghapus password yang ditulis langsung pada
+         docker-compose.yml.
+
+[x] [320] PORTFOLIO_DOCUMENTATION
+         Melengkapi dokumentasi dan portofolio proyek.
+
+[x] [330] FINAL_REPO_DELIVERY
+         Finalisasi repository GitHub dan validasi struktur proyek.
+```
+
+---
+
+## 📦 OUTPUT AKHIR
+
+* File `.env` berhasil diamankan menggunakan `.gitignore`
+* File `.env.example` disediakan sebagai template konfigurasi
+* Docker Compose menggunakan environment variables
+* Repository GitHub siap dipublikasikan tanpa data sensitif
+* Seluruh layanan (WordPress, MySQL, Redis, Redis Insight, dan MinIO) berjalan dengan normal
+
