@@ -50,3 +50,27 @@ KONTRIBUSI:
 - Konfigurasi Redis Insight
 - Integrasi WordPress dengan MinIO
 - Dokumentasi dan Pengujian Sistem
+
+
+
+####MINGGU 3 
+
+1. Amar Muchlisina
+   - Membuat file .env untuk menyimpan seluruh credentials aplikasi.
+   - Memindahkan konfigurasi database dan WordPress dari docker-compose.yml ke file .env.
+   - Membuat file .env.example sebagai template konfigurasi repository.
+   - Menambahkan file .gitignore untuk mencegah file .env terunggah ke GitHub.
+   - Melakukan pengujian docker compose setelah penerapan environment variables.
+   - Melakukan commit dan push perubahan ke repository GitHub.
+
+2. Adnan Adhi Pramana
+   - Melakukan verifikasi keamanan konfigurasi Docker Compose.
+   - Menguji konektivitas WordPress, MySQL, Redis, dan MinIO setelah penggunaan .env.
+   - Membantu dokumentasi hasil implementasi keamanan sistem.
+   - Melakukan review struktur repository sebelum pengumpulan.
+
+3. Moh. Rizky Alviansyah
+   - Menyiapkan dokumentasi dan screenshot implementasi Minggu 3.
+   - Memeriksa keberadaan file .env.example dan .gitignore pada repository.
+   - Membantu validasi bahwa kredensial tidak tersimpan di repository GitHub.
+   - Menyusun laporan akhir dan pengecekan kelengkapan repository untuk pengumpulan.
